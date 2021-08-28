@@ -6,37 +6,20 @@ namespace CF_module_4
     {
         static void Main(string[] args)
         {
-			Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-
-			var color = Console.ReadLine();
-
-			switch (color)
+            (string name, string[] dishes) User;
+            Console.Write("Введите имя пользователя: ");
+            User.name = Console.ReadLine();
+            User.dishes = new string[4];
+            Console.WriteLine("Введите любимые блюда:");
+            for (int i = 0; i < User.dishes.Length; i++)
             {
-				case "red":
-					Console.BackgroundColor = ConsoleColor.Red;
-					Console.ForegroundColor = ConsoleColor.Black;
-
-					Console.WriteLine("Your color is red!");
-					break;
-				case "green":
-					Console.BackgroundColor = ConsoleColor.Green;
-					Console.ForegroundColor = ConsoleColor.Black;
-
-					Console.WriteLine("Your color is green!");
-					break;
-				case "cyan":
-					Console.BackgroundColor = ConsoleColor.Cyan;
-					Console.ForegroundColor = ConsoleColor.Black;
-
-					Console.WriteLine("Your color is cyan!");
-					break;
-				default:
-					Console.BackgroundColor = ConsoleColor.Yellow;
-					Console.ForegroundColor = ConsoleColor.Black;
-
-					Console.WriteLine("Your color is yellow!");
-					break;
+                User.dishes[i] = Console.ReadLine();
             }
-		}
+            Console.WriteLine("Ваши любимые блюда: ");
+            foreach(string dish in User.dishes)
+            {
+                Console.WriteLine(dish);
+            }
+        }
     }
 }
